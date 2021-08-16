@@ -21,7 +21,7 @@ var pixelateMultiplier=1;
 
 function draw(){
 	// glitch.resetBytes();
-
+	background(0);
 	if(mouseIsPressed){
 		pixelateMultiplier-=0.05;
 		glitch.replaceBytes(minByte*(byteMultiplier), maxByte*(byteMultiplier)); // swap all decimal byte 100 for 104
