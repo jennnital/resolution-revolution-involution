@@ -17,15 +17,16 @@ function setup() {
 var minByte=100;
 var maxByte=104;
 var byteMultiplier=0.2;
-
+var pixelateMultiplier=1;
 
 function draw(){
 	// glitch.resetBytes();
-	if(mouseIsPressed){
 
+	if(mouseIsPressed){
+		pixelateMultiplier-=0.05;
 		glitch.replaceBytes(minByte*(byteMultiplier), maxByte*(byteMultiplier)); // swap all decimal byte 100 for 104
 		glitch.randomBytes(1); // add one random byte for movement
-		glitch.pixelate(.5);
+		glitch.pixelate(pixelateMultiplier);
 	}
 
 	glitch.buildImage();
