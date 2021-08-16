@@ -23,6 +23,10 @@ var mouseclickedcount=0;
 function draw(){
 	// glitch.resetBytes();
 	background(0);
+	fill(255);
+	text('click to glitch', 40, 10);
+	textAlign(CENTER, CENTER);
+
 	if(mouseIsPressed){
 		mouseclickedcount+=1;
 		pixelateMultiplier-=0.05;
@@ -35,8 +39,9 @@ function draw(){
 	image(glitch.image, width/2, height/2)
 
 	if(mouseclickedcount>3){
-		text('Generation loss occurs when the transduction of data creates artifacts, thus, these progressive,',width/2, height/2);
-		text('overlapping processes compound themselves into a spiral of self-destruction.,',width/2, height/2+10);
+		background(0,0,0,20);
+		text('Generation loss occurs when the transduction of data creates artifacts, thus, these progressive,',width/2, height/2+20);
+		text('overlapping processes compound themselves into a spiral of self-destruction.,',width/2, height/2+30);
 		textAlign(CENTER, CENTER);
 
 	}
