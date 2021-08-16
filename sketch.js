@@ -16,23 +16,19 @@ function setup() {
 
 var minByte=100;
 var maxByte=104;
+var byteMultiplier=0.2;
+
 
 function draw(){
+	// glitch.resetBytes();
+	if(mouseIsPressed){
 
-	glitch.resetBytes();
-
-	glitch.replaceBytes(minByte, maxByte); // swap all decimal byte 100 for 104
-	glitch.randomBytes(1); // add one random byte for movement
-
-	glitch.buildImage();
-	image(glitch.image, width/2, height/2)
-
-}
-function mousePressed(){
-	glitch.resetBytes();
-	glitch.replaceBytes(minByte*randomByte, maxByte*randomByte); // swap all decimal byte 100 for 104
-	glitch.randomBytes(4); // add one random byte for movement
+		glitch.replaceBytes(minByte*(byteMultiplier), maxByte*(byteMultiplier)); // swap all decimal byte 100 for 104
+		glitch.randomBytes(1); // add one random byte for movement
+		glitch.pixelate(.5);
+	}
 
 	glitch.buildImage();
 	image(glitch.image, width/2, height/2)
+
 }
