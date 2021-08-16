@@ -28,6 +28,7 @@ function draw(){
 	textAlign(CENTER, CENTER);
 
 	if(mouseIsPressed){
+
 		mouseclickedcount+=1;
 		pixelateMultiplier-=0.05;
 		glitch.replaceBytes(minByte*(byteMultiplier), maxByte*(byteMultiplier)); // swap all decimal byte 100 for 104
@@ -37,6 +38,10 @@ function draw(){
 
 	glitch.buildImage();
 	image(glitch.image, width/2, height/2)
+	if(mouseIsPressed){
+		noStroke();
+		text(mouseclickedcount,mouseX,mouseY-10);
+	}
 
 	if(mouseclickedcount>3){
 		background(0,0,0,20);
