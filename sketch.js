@@ -9,7 +9,7 @@ function setup() {
 	imageMode(CENTER);
 
 	glitch = new Glitch();
-	loadImage('keywords.png', function(im){
+	loadImage('./textures/keywords.png', function(im){
 		glitch.loadImage(im);
 	});
 }
